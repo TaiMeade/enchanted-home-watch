@@ -1,0 +1,47 @@
+{
+  "name": "Enchanted Home Watch",
+  "legalName": "Enchanted Home Watch",
+  "tagline": "Home watch for second homes in the Enchanted Circle",
+  "description": "Scheduled home watch visits, photo reports and storm checks for second homes in Taos, Angel Fire, Red River, Eagle Nest and across New Mexico's Enchanted Circle.",
+  "url": "https://taimeade.github.io/enchanted-home-watch/",
+  "locale": "en_US",
+  "foundingYear": 2026,
+  "ogImage": "og-image.jpg",
+  "contact": {
+    "email": "hello@enchantedhomewatch.com",
+    "phone": "(575) 555-0142",
+    "phoneE164": "+15755550142",
+    "hours": "Monday to Saturday, 8 am to 6 pm MT",
+    "responseTime": "We reply within one business day.",
+    "address": {
+      "locality": "Taos",
+      "region": "NM",
+      "postalCode": "87571",
+      "country": "US"
+    },
+    "geo": {
+      "lat": 36.4072,
+      "lon": -105.5731
+    }
+  },
+  "social": [
+    { "id": "facebook", "label": "Facebook", "url": "https://www.facebook.com/enchantedhomewatch" },
+    { "id": "instagram", "label": "Instagram", "url": "https://www.instagram.com/enchantedhomewatch" },
+    { "id": "nextdoor", "label": "Nextdoor", "url": "https://nextdoor.com/" }
+  ],
+  "billing": {
+    "currency": "USD",
+    "annualDiscountPercent": 15,
+    "methods": ["Credit or debit card", "ACH bank transfer", "Check"],
+    "terms": "Plans run month to month or annually. Change or cancel with 30 days' notice."
+  },
+  "nav": [
+    { "label": "Plans", "to": "/#plans" },
+    { "label": "How it works", "to": "/#how-it-works" },
+    { "label": "Service area", "to": "/#service-area" },
+    { "label": "FAQ", "to": "/#faq" }
+  ],
+  "cta": {
+    "primary": "Book a free walkthrough"
+  }
+}

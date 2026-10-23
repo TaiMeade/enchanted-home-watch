@@ -1,0 +1,145 @@
+{
+  "loop": {
+    "name": "Enchanted Circle Scenic Byway",
+    "miles": 84,
+    "peak": { "name": "Wheeler Peak", "elevationFt": 13161, "lat": 36.5568, "lon": -105.4167 },
+    "route": [
+      { "lat": 36.4072, "lon": -105.5731 },
+      { "lat": 36.3830, "lon": -105.4900 },
+      { "lat": 36.3960, "lon": -105.3700 },
+      { "lat": 36.3930, "lon": -105.2850 },
+      { "lat": 36.4700, "lon": -105.2600 },
+      { "lat": 36.5550, "lon": -105.2630 },
+      { "lat": 36.6400, "lon": -105.3250 },
+      { "lat": 36.7080, "lon": -105.4060 },
+      { "lat": 36.7150, "lon": -105.5100 },
+      { "lat": 36.7040, "lon": -105.5950 },
+      { "lat": 36.6200, "lon": -105.6300 },
+      { "lat": 36.5350, "lon": -105.6680 },
+      { "lat": 36.4700, "lon": -105.6150 }
+    ]
+  },
+  "towns": [
+    {
+      "slug": "taos",
+      "name": "Taos",
+      "lat": 36.4072,
+      "lon": -105.5731,
+      "elevationFt": 6969,
+      "onLoop": true,
+      "labelSide": "left",
+      "image": "blue-door",
+      "intro": "Taos homes range from century-old adobe to new builds on the mesa. Most of what goes wrong here starts on the roof or in a crawlspace, and it starts quietly.",
+      "watchFor": [
+        "Ponding on flat adobe roofs and blocked canales after snowmelt",
+        "Frozen pipes in crawlspaces and uninsulated portal walls",
+        "Wind damage to stucco, flashing and skylights",
+        "Rodents moving indoors when the weather turns"
+      ]
+    },
+    {
+      "slug": "arroyo-seco",
+      "name": "Arroyo Seco",
+      "lat": 36.5160,
+      "lon": -105.5690,
+      "elevationFt": 7100,
+      "onLoop": false,
+      "labelSide": "left",
+      "spurFrom": "taos",
+      "image": "aspens-fall",
+      "intro": "Arroyo Seco sits between the valley and the ski road, with older homes on wells and septic and long gravel drives that drift shut in winter.",
+      "watchFor": [
+        "Well pumps and pressure tanks failing while no one is home",
+        "Septic and propane levels before a long absence",
+        "Snow drifting across driveways and gates",
+        "Pack rats in garages and outbuildings"
+      ]
+    },
+    {
+      "slug": "taos-ski-valley",
+      "name": "Taos Ski Valley",
+      "lat": 36.5960,
+      "lon": -105.4540,
+      "elevationFt": 9207,
+      "onLoop": false,
+      "labelSide": "right",
+      "spurFrom": "arroyo-seco",
+      "image": "ski-valley",
+      "intro": "At over 9,000 feet, homes in the Ski Valley carry heavy snow for months. A missed check here can mean a collapsed deck or a burst line under three feet of powder.",
+      "watchFor": [
+        "Snow load on roofs, decks and balconies",
+        "Ice dams and water working under shingles",
+        "Heat failures during deep cold snaps",
+        "Blocked vents on furnaces and water heaters"
+      ]
+    },
+    {
+      "slug": "questa",
+      "name": "Questa",
+      "lat": 36.7040,
+      "lon": -105.5950,
+      "elevationFt": 7461,
+      "onLoop": true,
+      "labelSide": "left",
+      "image": "winter-sunset",
+      "intro": "Questa's quieter properties often sit far from neighbors, so problems can go unnoticed for weeks without a regular visit.",
+      "watchFor": [
+        "Break-ins and trespassing on remote parcels",
+        "Wind-driven damage to roofs and outbuildings",
+        "Frozen exterior spigots and irrigation lines",
+        "Wildlife getting into crawlspaces"
+      ]
+    },
+    {
+      "slug": "red-river",
+      "name": "Red River",
+      "lat": 36.7080,
+      "lon": -105.4060,
+      "elevationFt": 8671,
+      "onLoop": true,
+      "labelSide": "right",
+      "image": "snowy-cabin",
+      "intro": "Red River's cabins and condos fill up in ski season and summer, then sit empty in between. That gap is when pipes freeze and roofs leak.",
+      "watchFor": [
+        "Frozen pipes in cabins left on low heat",
+        "Snow load on cabin roofs and decks",
+        "Spring runoff and river flooding near low-lying lots",
+        "Bears and rodents around trash and food storage"
+      ]
+    },
+    {
+      "slug": "eagle-nest",
+      "name": "Eagle Nest",
+      "lat": 36.5550,
+      "lon": -105.2630,
+      "elevationFt": 8238,
+      "onLoop": true,
+      "labelSide": "right",
+      "image": "dawn-ridge",
+      "intro": "Eagle Nest homes face the lake and the wind. Long, cold winters and open exposure make regular exterior checks especially important.",
+      "watchFor": [
+        "Wind damage to siding, roofing and fences",
+        "Deep freezes and power outages",
+        "Ice and snow blocking doors and garage entries",
+        "Moisture and mold in closed-up homes"
+      ]
+    },
+    {
+      "slug": "angel-fire",
+      "name": "Angel Fire",
+      "lat": 36.3930,
+      "lon": -105.2850,
+      "elevationFt": 8406,
+      "onLoop": true,
+      "labelSide": "right",
+      "image": "aspens-fall",
+      "intro": "Angel Fire has more second homes than full-time residents. Winters are long and cold at 8,400 feet, and HOA rules often expect an owner contact on call.",
+      "watchFor": [
+        "Furnace and boiler failures in sub-zero nights",
+        "Frozen and burst pipes in empty homes",
+        "Snow load and ice dams on steep roofs",
+        "HOA notices, packages and deliveries piling up"
+      ]
+    }
+  ]
+}

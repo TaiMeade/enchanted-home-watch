@@ -1,0 +1,58 @@
+{
+  "plans": [
+    {
+      "id": "gold",
+      "name": "Gold",
+      "monthly": 149,
+      "cadence": "2 visits a month",
+      "summary": "For homes that sit quiet between seasonal stays.",
+      "includes": null,
+      "features": [
+        "Two scheduled walkthroughs a month",
+        "Interior and exterior check for leaks, pests, heat and break-ins",
+        "Photo report emailed after every visit",
+        "Freeze and storm checks after severe weather",
+        "Key holding and alarm-company contact"
+      ]
+    },
+    {
+      "id": "platinum",
+      "name": "Platinum",
+      "monthly": 249,
+      "cadence": "Weekly visits",
+      "summary": "For owners who want eyes on the house every week.",
+      "includes": "gold",
+      "featured": true,
+      "badge": "Most chosen",
+      "features": [
+        "Weekly walkthroughs instead of twice a month",
+        "Run faucets, flush toilets and cycle appliances",
+        "Mail and package collection",
+        "Arrival prep: heat up, lights on, driveway checked"
+      ]
+    },
+    {
+      "id": "diamond",
+      "name": "Diamond",
+      "monthly": 399,
+      "cadence": "Weekly plus on demand",
+      "summary": "For owners who want one local contact for everything.",
+      "includes": "platinum",
+      "features": [
+        "Up to four extra visits a month, whenever you ask",
+        "24/7 emergency response line",
+        "Meet contractors, cleaners and delivery crews on site",
+        "Groceries and firewood stocked before you arrive",
+        "Seasonal checklists for snow load and wildfire defensible space"
+      ]
+    }
+  ],
+  "addOns": [
+    { "id": "single-visit", "name": "Single check-in visit", "price": 75, "unit": "visit", "description": "A full walkthrough and photo report, no plan needed." },
+    { "id": "arrival-prep", "name": "Arrival or departure prep", "price": 95, "unit": "visit", "description": "Open up or close down the house around your stay." },
+    { "id": "storm-visit", "name": "Post-storm emergency visit", "price": 95, "unit": "visit", "description": "Same-day check after a storm, outage or alarm." },
+    { "id": "contractor-meet", "name": "Contractor meet-up", "price": 55, "unit": "hour", "description": "We let trades in, stay on site and lock up after." },
+    { "id": "key-holding", "name": "Key holding only", "price": 20, "unit": "month", "description": "Secure key storage and a local emergency contact." },
+    { "id": "snow-coordination", "name": "Snow removal coordination", "price": null, "unit": "season", "description": "We line up plowing and roof clearing with local crews." }
+  ]
+}

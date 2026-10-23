@@ -1,0 +1,15 @@
+{
+  "property": "Cabin on Vail Loop, Angel Fire",
+  "date": "Tuesday, January 13",
+  "time": "9:40 am",
+  "conditions": "18°F, 6 in. of new snow",
+  "checks": [
+    { "status": "ok", "label": "Heat holding at 55°F" },
+    { "status": "ok", "label": "No water under sinks, water heater or washer" },
+    { "status": "ok", "label": "Roof and deck snow under 12 in." },
+    { "status": "ok", "label": "Doors and windows locked, alarm armed" },
+    { "status": "flag", "label": "Mouse droppings in pantry", "note": "Traps set, recheck next visit" }
+  ],
+  "photos": ["snowy-cabin", "log-cabin", "aspen-trunks"],
+  "signoff": "Checked by your Enchanted Home Watch team"
+}
