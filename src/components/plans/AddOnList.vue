@@ -6,77 +6,75 @@ import { formatPrice } from '@/lib/format'
 const { addOns } = usePlans()
 const { openContact } = useContactDialog()
 
-const priceLabel = (item) => (item.price == null ? 'Quoted' : `${formatPrice(item.price)} / ${item.unit}`)
+const priceLabel = (item) => (item.price == null ? 'Quoted' : formatPrice(item.price))
+const unitLabel = (item) => (item.price == null ? `per ${item.unit}` : `/ ${item.unit}`)
 </script>
 
 <template>
-  <div class="addons tw:grid tw:gap-10 tw:lg:grid-cols-[1fr_2fr]">
+  <div class="addons tw:grid tw:gap-10 tw:lg:grid-cols-[1fr_2fr] tw:items-start">
     <div class="tw:flex tw:flex-col tw:gap-4">
       <h3 class="display-3">Just need something once?</h3>
       <p class="muted">
         Book single services without a plan, or add them to one. Plan members get add-ons at the same price, with
         priority scheduling.
       </p>
-      <v-btn variant="text" color="primary" class="tw:self-start tw:-ml-4" @click="openContact('single-visit')">
+      <v-btn variant="tonal" color="forest" class="tw:self-start tw:mt-2" @click="openContact('single-visit')">
         Ask about a one-time visit
       </v-btn>
     </div>
 
-    <dl class="addons__list tw:grid tw:gap-x-12 tw:md:grid-cols-2">
-      <div v-for="item in addOns" :key="item.id" class="addons__item">
-        <dt class="addons__row">
-          <span class="addons__name">{{ item.name }}</span>
-          <span class="addons__leader" aria-hidden="true" />
-          <span class="addons__price">{{ priceLabel(item) }}</span>
-        </dt>
-        <dd class="addons__desc muted">{{ item.description }}</dd>
-      </div>
-    </dl>
+    <ul class="tw:grid tw:gap-3 tw:md:grid-cols-2">
+      <li v-for="item in addOns" :key="item.id" class="addon">
+        <div class="tw:flex tw:items-baseline tw:justify-between tw:gap-4">
+          <h4 class="addon__name">{{ item.name }}</h4>
+          <p class="addon__price">
+            {{ priceLabel(item) }} <span class="addon__unit">{{ unitLabel(item) }}</span>
+          </p>
+        </div>
+        <p class="addon__desc muted">{{ item.description }}</p>
+      </li>
+    </ul>
   </div>
 </template>
 
 <style scoped>
 .addons {
-  padding-top: 56px;
-  border-top: 1px solid rgba(var(--v-theme-ridge), 0.12);
+  padding: clamp(28px, 4vw, 48px);
+  border-radius: var(--radius-xl);
+  background: rgb(var(--v-theme-sage));
 }
 
-.addons__list {
-  margin: 0;
+.addons ul {
+  list-style: none;
 }
 
-.addons__item {
-  padding-block: 16px;
-  border-bottom: 1px solid rgba(var(--v-theme-ridge), 0.08);
+.addon {
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+  background: rgb(var(--v-theme-surface));
 }
 
-/* Lodge-menu style price list: name, dotted leader, price */
-.addons__row {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
+.addon__name {
+  font-size: 1rem;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
 }
 
-.addons__name {
-  font-weight: 600;
-}
-
-.addons__leader {
-  flex: 1;
-  min-width: 16px;
-  border-bottom: 2px dotted rgba(var(--v-theme-ridge), 0.25);
-  transform: translateY(-4px);
-}
-
-.addons__price {
-  font-family: var(--type-display);
-  font-weight: 600;
+.addon__price {
+  font-weight: 800;
   white-space: nowrap;
   color: rgb(var(--v-theme-primary));
 }
 
-.addons__desc {
-  margin: 4px 0 0;
+.addon__unit {
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0.75;
+}
+
+.addon__desc {
+  margin-top: 4px;
   font-size: var(--step--1);
+  line-height: 1.5;
 }
 </style>

@@ -8,19 +8,19 @@ const year = new Date().getFullYear()
 </script>
 
 <template>
-  <footer class="footer">
+  <footer class="footer frame">
     <div class="shell tw:grid tw:gap-12 tw:md:grid-cols-2 tw:lg:grid-cols-[3fr_2fr_2fr_2fr]">
-      <div class="tw:flex tw:flex-col tw:gap-4">
+      <div class="tw:flex tw:flex-col tw:gap-5">
         <router-link to="/" class="footer__home" aria-label="Enchanted Home Watch, home"><BrandMark /></router-link>
         <p class="footer__muted measure">{{ site.description }}</p>
-        <ul class="footer__social tw:flex tw:gap-1" aria-label="Social media">
+        <ul class="footer__social tw:flex tw:gap-2" aria-label="Social media">
           <li v-for="link in site.social" :key="link.id">
             <v-btn
               :href="link.url"
               target="_blank"
               rel="noopener"
               :icon="socialIcon(link.id)"
-              variant="text"
+              variant="tonal"
               size="small"
               :aria-label="link.label"
             />
@@ -68,8 +68,9 @@ const year = new Date().getFullYear()
 <style scoped>
 .footer {
   color: rgb(var(--v-theme-background));
-  background: rgb(var(--v-theme-ridge));
-  padding-top: clamp(56px, 8vw, 96px);
+  background: rgb(var(--v-theme-forest-deep));
+  padding-top: clamp(64px, 8vw, 104px);
+  margin-bottom: var(--frame-inset);
 }
 
 .footer a {
@@ -77,25 +78,26 @@ const year = new Date().getFullYear()
 }
 
 .footer a:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  color: rgb(var(--v-theme-gold-soft));
 }
 
 .footer__muted {
-  opacity: 0.68;
+  color: rgba(255, 255, 255, 0.62);
 }
 
 .footer__heading {
-  font-size: var(--step-1);
-  margin-bottom: 14px;
-  color: rgb(var(--v-theme-aspen));
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: rgb(var(--v-theme-gold-soft));
 }
 
 .footer__list {
   list-style: none;
   display: grid;
-  gap: 8px;
+  gap: 10px;
   font-size: 0.95rem;
+  text-wrap: balance;
 }
 
 .footer__email {
@@ -104,14 +106,15 @@ const year = new Date().getFullYear()
 
 .footer__social {
   list-style: none;
-  margin-left: -8px;
 }
 
 .footer__base {
-  margin-top: 56px;
-  padding-block: 24px;
-  border-top: 1px solid rgb(255 255 255 / 0.12);
+  margin-top: 64px;
+  padding-block: 28px;
+  /* Divider spans the content column, not the gutters */
+  background: linear-gradient(rgb(255 255 255 / 0.1), rgb(255 255 255 / 0.1)) top center / calc(100% - var(--gutter) * 2) 1px
+    no-repeat;
   font-size: var(--step--1);
-  opacity: 0.6;
+  color: rgba(255, 255, 255, 0.5);
 }
 </style>

@@ -34,7 +34,7 @@ watch(isOpen, (open) => {
           <p class="muted">
             Need us sooner? Call <a :href="`tel:${site.contact.phoneE164}`">{{ site.contact.phone }}</a>.
           </p>
-          <v-btn color="ridge" variant="outlined" @click="closeContact">Close</v-btn>
+          <v-btn color="forest" variant="tonal" @click="closeContact">Close</v-btn>
         </div>
         <ContactForm v-else :service="preselectedService" @sent="sent = true" />
       </v-card-text>
@@ -49,7 +49,6 @@ watch(isOpen, (open) => {
   align-items: flex-start;
   gap: 16px;
   padding: 28px 20px 8px 28px;
-  border-top: 6px solid rgb(var(--v-theme-accent));
 }
 
 .contact__title {
@@ -58,11 +57,22 @@ watch(isOpen, (open) => {
 
 .contact__sub {
   margin-top: 6px;
-  color: rgb(var(--v-theme-stone));
+  color: rgb(var(--v-theme-muted));
 }
 
 .contact__body {
   padding: 20px 28px 28px !important;
+}
+
+@media (max-width: 599px) {
+  .contact__head {
+    gap: 8px;
+    padding: 22px 10px 4px 22px;
+  }
+
+  .contact__body {
+    padding: 16px 22px 22px !important;
+  }
 }
 
 .contact__done {

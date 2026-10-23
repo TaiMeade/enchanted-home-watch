@@ -11,8 +11,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^5.0.2",
-    "@fontsource-variable/public-sans": "^5.3.0",
-    "@fontsource/zilla-slab": "^5.3.0",
+    "@fontsource-variable/manrope": "^5.3.0",
     "@mdi/js": "^7.4.47",
     "@unhead/vue": "^2.1.17",
     "vue": "^3.5.43",

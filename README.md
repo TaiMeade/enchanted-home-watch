@@ -17,9 +17,10 @@ is subscription-based:
 Gallery of pictures at the top, navbar, hero/title, contact modal, subscription cards, etc. More
 information inbound from Ian.
 
-The theme draws on the place itself: Sangre de Cristo alpenglow (rose `#B8405F`), Taos blue doors
-(`#2E7689`), aspen gold (`#D4A23A`), night ridge (`#1C2733`) and snowfield (`#F3F6F5`).
-Headings are set in Zilla Slab (trail-sign slab serif), body text in Public Sans.
+The theme pairs spruce forest (`#173A33`) with aspen gold (`#E3AA45`) on a soft sage mist
+(`#F4F6F2`), echoing the Gold / Platinum / Diamond tiers. Gold is reserved for actions and highlights.
+Type is Manrope throughout, with tight, heavy headings. Photo and dark sections sit in rounded panels
+inset from the page edge, under a floating glass navbar.
 
 ---
 

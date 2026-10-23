@@ -2,6 +2,7 @@
   "property": "Cabin on Vail Loop, Angel Fire",
   "date": "Tuesday, January 13",
   "time": "9:40 am",
+  "sentAt": "10:05 am",
   "conditions": "18°F, 6 in. of new snow",
   "checks": [
     { "status": "ok", "label": "Heat holding at 55°F" },

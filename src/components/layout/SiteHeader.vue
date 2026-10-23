@@ -12,7 +12,7 @@ const { openContact } = useContactDialog()
 const scrolled = ref(false)
 const drawer = ref(false)
 
-// Pages with a photo hero start with a see-through header that turns solid on scroll.
+// Pages with a photo hero start with a dark glass bar that turns light on scroll.
 const overPhoto = computed(() => !route.meta.solidHeader && !scrolled.value)
 
 function onScroll() {
@@ -33,33 +33,36 @@ function openFromDrawer() {
 
 <template>
   <header class="site-header" :class="{ 'site-header--photo': overPhoto }">
-    <div class="shell site-header__bar">
-      <router-link to="/" class="site-header__home" aria-label="Enchanted Home Watch, home">
-        <BrandMark />
-      </router-link>
-
-      <nav class="site-header__nav" aria-label="Main">
-        <router-link v-for="item in site.nav" :key="item.to" :to="item.to" class="site-header__link">
-          {{ item.label }}
+    <div class="shell">
+      <div class="site-header__bar">
+        <router-link to="/" class="site-header__home" aria-label="Enchanted Home Watch, home">
+          <BrandMark />
         </router-link>
-      </nav>
 
-      <div class="site-header__actions">
-        <v-btn color="accent" class="site-header__cta" @click="openContact()">
-          {{ site.cta.primary }}
-        </v-btn>
-        <v-btn
-          class="site-header__menu"
-          :icon="mdiMenu"
-          variant="text"
-          aria-label="Open menu"
-          @click="drawer = true"
-        />
+        <nav class="site-header__nav" aria-label="Main">
+          <router-link v-for="item in site.nav" :key="item.to" :to="item.to" class="site-header__link">
+            {{ item.label }}
+          </router-link>
+        </nav>
+
+        <div class="site-header__actions">
+          <v-btn color="accent" class="site-header__cta" @click="openContact()">
+            {{ site.cta.primary }}
+          </v-btn>
+          <v-btn
+            class="site-header__menu"
+            :icon="mdiMenu"
+            variant="text"
+            size="small"
+            aria-label="Open menu"
+            @click="drawer = true"
+          />
+        </div>
       </div>
     </div>
   </header>
 
-  <v-navigation-drawer v-model="drawer" location="right" temporary width="300" color="ridge">
+  <v-navigation-drawer v-model="drawer" location="right" temporary width="320" color="forest">
     <div class="drawer">
       <v-btn :icon="mdiClose" variant="text" aria-label="Close menu" class="drawer__close" @click="drawer = false" />
       <nav aria-label="Mobile">
@@ -73,7 +76,7 @@ function openFromDrawer() {
           {{ item.label }}
         </router-link>
       </nav>
-      <v-btn color="accent" size="large" block @click="openFromDrawer">{{ site.cta.primary }}</v-btn>
+      <v-btn color="accent" size="x-large" block @click="openFromDrawer">{{ site.cta.primary }}</v-btn>
       <a class="drawer__phone" :href="`tel:${site.contact.phoneE164}`">{{ site.contact.phone }}</a>
     </div>
   </v-navigation-drawer>
@@ -82,30 +85,37 @@ function openFromDrawer() {
 <style scoped>
 .site-header {
   position: fixed;
-  inset: 0 0 auto;
+  inset: calc(var(--frame-inset) + 10px) 0 auto;
   z-index: 1006;
-  color: rgb(var(--v-theme-ridge));
-  background: rgba(var(--v-theme-background), 0.94);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 1px 0 rgba(var(--v-theme-ridge), 0.08);
-  transition:
-    background-color 0.3s var(--ease-out),
-    color 0.3s var(--ease-out),
-    box-shadow 0.3s var(--ease-out);
-}
-
-.site-header--photo {
-  color: #fff;
-  background: transparent;
-  backdrop-filter: none;
-  box-shadow: none;
+  pointer-events: none;
 }
 
 .site-header__bar {
+  pointer-events: auto;
   display: flex;
   align-items: center;
   gap: 24px;
-  height: 72px;
+  height: 64px;
+  padding-inline: 20px 10px;
+  border-radius: 999px;
+  color: rgb(var(--v-theme-on-background));
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(var(--v-theme-forest), 0.08);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  transition:
+    background-color 0.35s var(--ease-out),
+    color 0.35s var(--ease-out),
+    border-color 0.35s var(--ease-out),
+    box-shadow 0.35s var(--ease-out);
+}
+
+.site-header--photo .site-header__bar {
+  color: #fff;
+  background: rgba(var(--v-theme-forest-deep), 0.28);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: none;
 }
 
 .site-header__home {
@@ -115,20 +125,24 @@ function openFromDrawer() {
 
 .site-header__nav {
   display: none;
-  gap: 28px;
+  gap: 4px;
 }
 
 .site-header__link {
-  font-weight: 500;
-  font-size: 0.95rem;
+  font-weight: 600;
+  font-size: 0.93rem;
   text-decoration: none;
-  padding-block: 6px;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.2s;
+  padding: 8px 14px;
+  border-radius: 999px;
+  transition: background-color 0.2s;
 }
 
 .site-header__link:hover {
-  border-bottom-color: rgb(var(--v-theme-accent));
+  background: rgba(var(--v-theme-forest), 0.07);
+}
+
+.site-header--photo .site-header__link:hover {
+  background: rgba(255, 255, 255, 0.14);
 }
 
 .site-header__actions {
@@ -157,7 +171,7 @@ function openFromDrawer() {
 
 @media (max-width: 420px) {
   .site-header :deep(.brand__name) {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
 }
 
@@ -173,22 +187,23 @@ function openFromDrawer() {
   align-self: flex-end;
 }
 
-.drawer__link {
-  display: block;
-  padding: 12px 0;
-  font-family: var(--type-display);
-  font-size: var(--step-2);
-  text-decoration: none;
-  border-bottom: 1px solid rgb(255 255 255 / 0.12);
-}
-
 .drawer nav {
   margin-bottom: 24px;
+}
+
+.drawer__link {
+  display: block;
+  padding: 14px 0;
+  font-size: var(--step-2);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  border-bottom: 1px solid rgb(255 255 255 / 0.1);
 }
 
 .drawer__phone {
   margin-top: 12px;
   text-align: center;
-  opacity: 0.85;
+  opacity: 0.8;
 }
 </style>

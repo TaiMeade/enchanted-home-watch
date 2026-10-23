@@ -1,44 +1,48 @@
-// Brand palette drawn from the Enchanted Circle: Sangre de Cristo alpenglow,
-// Taos blue doors, aspen gold and ponderosa pine. Vuetify exposes every key
-// below as rgb(var(--v-theme-<key>)), so CSS and Tailwind read from here too.
+// Brand palette: spruce forest and aspen gold on a soft sage mist.
+// Two hues and their tints keep the site calm; gold is reserved for actions
+// and highlights. Vuetify exposes every key below as rgb(var(--v-theme-<key>)),
+// so CSS and Tailwind read from here too.
 export const palette = {
-  snow: '#F3F6F5',
-  ridge: '#1C2733',
-  ridgeSoft: '#2A3847',
-  taosBlue: '#2E7689',
-  alpenglow: '#B8405F',
-  aspen: '#D4A23A',
-  ponderosa: '#3E5A49',
-  stone: '#5B6670',
+  mist: '#F4F6F2', // page background
+  sage: '#E6ECE5', // tinted sections and chips
+  ink: '#16241F', // body text
+  forest: '#173A33', // dark sections
+  forestDeep: '#0E2622', // footer, gradients
+  spruce: '#2C6B5E', // links, icons, checks
+  gold: '#E3AA45', // primary actions
+  goldSoft: '#F3D08A', // highlights on dark backgrounds
+  muted: '#5C6A64', // secondary text
 }
 
 // Accent for each subscription tier, keyed by plan id in src/data/plans.json.
 export const tierColors = {
-  gold: '#C9962B',
-  platinum: '#9AA7B1',
-  diamond: '#7FB9CC',
+  gold: '#D9A441',
+  platinum: '#A3B0B8',
+  diamond: '#8CC3D1',
 }
 
 export const enchantedTheme = {
   dark: false,
   colors: {
-    background: palette.snow,
+    background: palette.mist,
     surface: '#FFFFFF',
-    'on-background': palette.ridge,
-    'on-surface': palette.ridge,
-    primary: palette.taosBlue,
-    secondary: palette.ponderosa,
-    accent: palette.alpenglow,
-    ridge: palette.ridge,
-    'ridge-soft': palette.ridgeSoft,
-    aspen: palette.aspen,
-    stone: palette.stone,
+    'on-background': palette.ink,
+    'on-surface': palette.ink,
+    primary: palette.spruce,
+    secondary: palette.forest,
+    accent: palette.gold,
+    'on-accent': palette.ink,
+    forest: palette.forest,
+    'forest-deep': palette.forestDeep,
+    sage: palette.sage,
+    'gold-soft': palette.goldSoft,
+    muted: palette.muted,
     'tier-gold': tierColors.gold,
     'tier-platinum': tierColors.platinum,
     'tier-diamond': tierColors.diamond,
     error: '#B3261E',
-    warning: '#B26A00',
-    success: '#2F7D4F',
-    info: palette.taosBlue,
+    warning: '#A86A0C',
+    success: '#2E7D57',
+    info: palette.spruce,
   },
 }

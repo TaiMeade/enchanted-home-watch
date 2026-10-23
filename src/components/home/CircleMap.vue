@@ -148,8 +148,8 @@ const goTo = (slug) => router.push(`/service-areas/${slug}`)
 
 .map__road-glow {
   fill: none;
-  stroke: rgba(var(--v-theme-accent), 0.25);
-  stroke-width: 14;
+  stroke: rgba(var(--v-theme-accent), 0.18);
+  stroke-width: 16;
   stroke-linejoin: round;
 }
 
@@ -198,11 +198,20 @@ const goTo = (slug) => router.push(`/service-areas/${slug}`)
   fill: rgb(var(--v-theme-background));
 }
 
+/* A halo in the panel color keeps labels legible where they cross the road */
+.map__label,
+.map__peak text {
+  paint-order: stroke;
+  stroke: rgb(var(--v-theme-forest));
+  stroke-width: 5px;
+  stroke-linejoin: round;
+}
+
 .map__peak-name {
   fill: rgb(var(--v-theme-background));
   font-family: var(--type-display);
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .map__peak-elev {
@@ -219,7 +228,7 @@ const goTo = (slug) => router.push(`/service-areas/${slug}`)
 }
 
 .map__dot {
-  fill: rgb(var(--v-theme-ridge));
+  fill: rgb(var(--v-theme-forest));
   stroke: rgb(var(--v-theme-background));
   stroke-width: 2.5;
   transition:
@@ -233,8 +242,9 @@ const goTo = (slug) => router.push(`/service-areas/${slug}`)
 
 .map__name {
   font-family: var(--type-display);
-  font-size: 16px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .map__elev {
@@ -242,14 +252,33 @@ const goTo = (slug) => router.push(`/service-areas/${slug}`)
   fill: rgba(255, 255, 255, 0.6);
 }
 
+/* The map shrinks to about half size on phones; the town tiles above it already list elevations */
+@media (max-width: 599px) {
+  .map__name {
+    font-size: 19px;
+  }
+
+  .map__elev {
+    display: none;
+  }
+
+  .map__peak-name {
+    font-size: 17px;
+  }
+
+  .map__peak-elev {
+    font-size: 13px;
+  }
+}
+
 .map__town--active .map__dot,
 .map__town:hover .map__dot {
-  fill: rgb(var(--v-theme-aspen));
+  fill: rgb(var(--v-theme-gold-soft));
   r: 9px;
 }
 
 .map__town--active .map__name,
 .map__town:hover .map__name {
-  fill: rgb(var(--v-theme-aspen));
+  fill: rgb(var(--v-theme-gold-soft));
 }
 </style>

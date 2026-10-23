@@ -102,7 +102,7 @@ async function submit() {
       label="What are you interested in?"
       :rules="[rules.required('what you are interested in')]"
     />
-    <v-select v-model="form.town" :items="townOptions" label="Where is the home? (optional)" />
+    <v-select v-model="form.town" :items="townOptions" label="Town (optional)" />
     <v-textarea
       v-model="form.message"
       label="Tell us about the home"
@@ -132,6 +132,6 @@ async function submit() {
 <style scoped>
 .contact-form__note {
   font-size: var(--step--1);
-  color: rgb(var(--v-theme-stone));
+  color: rgb(var(--v-theme-muted));
 }
 </style>

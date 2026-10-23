@@ -37,7 +37,7 @@ useSeo(() => ({
 </script>
 
 <template>
-  <section class="town-hero" aria-labelledby="town-title">
+  <section class="town-hero frame" aria-labelledby="town-title">
     <img :src="photo.src" :srcset="photo.srcset" sizes="100vw" alt="" class="town-hero__bg" fetchpriority="high" />
     <div class="shell town-hero__inner tw:flex tw:flex-col tw:gap-5">
       <nav aria-label="Breadcrumb" class="town-hero__crumbs">
@@ -69,12 +69,12 @@ useSeo(() => ({
 
   <PlansSection :show-add-ons="false" :heading="`Plans for ${town.name} homes`" />
 
-  <section class="section others" aria-labelledby="others-title">
+  <section class="section" aria-labelledby="others-title">
     <div class="shell tw:flex tw:flex-col tw:gap-6">
       <h2 id="others-title" class="display-3">We also cover</h2>
       <ul class="tw:flex tw:flex-wrap tw:gap-3 others__list">
         <li v-for="other in otherTowns" :key="other.slug">
-          <v-btn :to="`/service-areas/${other.slug}`" variant="outlined" color="ridge">{{ other.name }}</v-btn>
+          <v-btn :to="`/service-areas/${other.slug}`" variant="tonal" color="forest">{{ other.name }}</v-btn>
         </li>
       </ul>
     </div>
@@ -87,12 +87,12 @@ useSeo(() => ({
 .town-hero {
   position: relative;
   isolation: isolate;
-  min-height: max(520px, 70svh);
+  margin-top: var(--frame-inset);
+  min-height: max(540px, 72svh);
   display: flex;
   align-items: flex-end;
   color: #fff;
-  background: rgb(var(--v-theme-ridge));
-  overflow: hidden;
+  background: rgb(var(--v-theme-forest));
 }
 
 .town-hero__bg {
@@ -110,12 +110,12 @@ useSeo(() => ({
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(to top, rgba(var(--v-theme-ridge), 0.92) 0%, rgba(var(--v-theme-ridge), 0.3) 60%),
-    linear-gradient(to bottom, rgba(var(--v-theme-ridge), 0.55) 0%, transparent 25%);
+    linear-gradient(to top, rgba(var(--v-theme-forest-deep), 0.9) 0%, rgba(var(--v-theme-forest-deep), 0.3) 60%),
+    linear-gradient(to bottom, rgba(var(--v-theme-forest-deep), 0.5) 0%, transparent 25%);
 }
 
 .town-hero__inner {
-  padding-top: 140px;
+  padding-top: 160px;
   padding-bottom: clamp(40px, 6vw, 72px);
 }
 
@@ -148,30 +148,30 @@ useSeo(() => ({
 .watch-list {
   list-style: none;
   display: grid;
-  gap: 0;
+  gap: 10px;
   align-self: start;
 }
 
 .watch-list li {
-  padding: 18px 0 18px 32px;
   position: relative;
-  font-size: var(--step-1);
-  line-height: 1.4;
-  border-bottom: 1px solid rgba(var(--v-theme-ridge), 0.12);
+  padding: 18px 20px 18px 52px;
+  font-weight: 600;
+  line-height: 1.45;
+  border-radius: var(--radius-md);
+  background: rgb(var(--v-theme-surface));
+  border: var(--hairline);
 }
 
 .watch-list li::before {
   content: '';
   position: absolute;
-  left: 0;
-  top: 1.45em;
-  width: 16px;
-  height: 3px;
+  left: 20px;
+  top: 22px;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  transform: rotate(45deg);
   background: rgb(var(--v-theme-accent));
-}
-
-.others {
-  padding-top: 0;
 }
 
 .others__list {

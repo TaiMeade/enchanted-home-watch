@@ -8,7 +8,7 @@
   "foundingYear": 2026,
   "ogImage": "og-image.jpg",
   "contact": {
-    "email": "taitaishi123@gmail.com",
+    "email": "hello@enchantedhomewatch.com",
     "phone": "(575) 555-0142",
     "phoneE164": "+15755550142",
     "hours": "Monday to Saturday, 8 am to 6 pm MT",
@@ -43,5 +43,6 @@
   ],
   "cta": {
     "primary": "Book a free walkthrough"
-  }
+  },
+  "highlights": ["Free walkthrough", "Photo report after every visit", "No long-term contract"]
 }

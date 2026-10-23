@@ -13,10 +13,10 @@ const photo = usePhoto('winter-sunset')
 </script>
 
 <template>
-  <section class="cta" aria-labelledby="cta-title">
+  <section class="cta frame" aria-labelledby="cta-title">
     <img :src="photo.src" :srcset="photo.srcset" sizes="100vw" alt="" loading="lazy" class="cta__bg" />
-    <div class="shell cta__inner tw:flex tw:flex-col tw:gap-6 tw:md:flex-row tw:md:items-end tw:md:justify-between">
-      <div class="tw:flex tw:flex-col tw:gap-3">
+    <div class="shell cta__inner tw:flex tw:flex-col tw:gap-8 tw:lg:flex-row tw:lg:items-end tw:lg:justify-between">
+      <div class="tw:flex tw:flex-col tw:gap-5">
         <h2 id="cta-title" class="display-2 cta__title">{{ heading }}</h2>
         <p class="lede cta__lede">The walkthrough is free, and there's nothing to sign until you pick a plan.</p>
       </div>
@@ -33,11 +33,10 @@ const photo = usePhoto('winter-sunset')
 <style scoped>
 .cta {
   position: relative;
-  isolation: isolate;
-  overflow: hidden;
   color: #fff;
-  background: rgb(var(--v-theme-ridge));
-  padding-block: clamp(80px, 12vw, 160px) clamp(48px, 6vw, 72px);
+  background: rgb(var(--v-theme-forest));
+  padding-block: clamp(96px, 12vw, 176px) clamp(40px, 5vw, 64px);
+  margin-bottom: var(--frame-inset);
 }
 
 .cta__bg {
@@ -54,14 +53,14 @@ const photo = usePhoto('winter-sunset')
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(to top, rgba(var(--v-theme-ridge), 0.92) 10%, rgba(var(--v-theme-ridge), 0.35) 100%);
+  background: linear-gradient(to top, rgba(var(--v-theme-forest-deep), 0.92) 15%, rgba(var(--v-theme-forest-deep), 0.25) 100%);
 }
 
 .cta__title {
-  max-width: 16em;
+  max-width: 15em;
 }
 
 .cta__lede {
-  opacity: 0.88;
+  color: rgba(255, 255, 255, 0.82);
 }
 </style>
